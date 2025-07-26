@@ -1,0 +1,13 @@
+# Ignore build artifacts
+.gradle/
+android/app/build/
+*.apk
+*.zip
+*.rar
+
+# IDE config
+.vscode/
+.idea/
+
+# Node modules
+node_modules/
