@@ -34,7 +34,7 @@ export async function authLogin({
 }: ApiLoginParam): Promise<Base.ApiResponse<AuthLoginResponse>> {
   try {
     const response = await api.post(
-      'http://27.254.145.186:3006/v1/app/login',
+      'http://ygevo.myvnc.com/nba/api/v1/app/login',
       data,
     );
     auth.save(response.data.token);
@@ -58,7 +58,7 @@ export async function authRegister({
 }: ApiRegisterParam): Promise<Base.ApiResponse<AuthRegisterResponse>> {
   try {
     const response = await api.post(
-      'http://27.254.145.186:3006/v1/app/register',
+      'http://ygevo.myvnc.com/nba/api/v1/app/register',
       data,
     );
 

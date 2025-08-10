@@ -13,7 +13,7 @@ export async function recordNBAApi(
   data: RecordApiParams,
 ): Promise<Base.ApiResponse<RecordApiResponse>> {
   try {
-    let endpoint = 'https://api-nba.cquiz.app/v1/app';
+    let endpoint = 'http://ygevo.myvnc.com/nba/api/v1/app';
 
     const response = await api.post(`${endpoint}/record`, data);
 
@@ -35,7 +35,7 @@ export async function recordWNBAApi(
   data: RecordApiParams,
 ): Promise<Base.ApiResponse<RecordApiResponse>> {
   try {
-    let endpoint = 'http://27.254.145.186:3006/v1/app';
+    let endpoint = 'http://ygevo.myvnc.com/wnba/api/v1/app';
 
     const response = await api.post(`${endpoint}/record`, data);
 
@@ -59,8 +59,8 @@ export async function favoriteApi(
   try {
     let endpoint =
       type === 0
-        ? 'https://api-nba.cquiz.app/v1/app'
-        : 'http://27.254.145.186:3006/v1/app';
+        ? 'http://ygevo.myvnc.com/nba/api/v1/app'
+        : 'http://ygevo.myvnc.com/wnba/api/v1/app';
 
     const response = await api.post(`${endpoint}/favorite`, data);
 
@@ -81,8 +81,8 @@ export async function getprofileApi(type: number) {
   try {
     let endpoint =
       type === 0
-        ? 'https://api-nba.cquiz.app/v1/app'
-        : 'http://27.254.145.186:3006/v1/app';
+        ? 'http://ygevo.myvnc.com/nba/api/v1/app'
+        : 'http://ygevo.myvnc.com/wnba/api/v1/app';
 
     const data = await AsyncStorage.getItem('profile');
     const _data = data ? JSON.parse(data) : null;

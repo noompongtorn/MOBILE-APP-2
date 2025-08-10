@@ -1,6 +1,6 @@
 import api from '@lib/api/api';
-import {Base} from '.';
-import {AxiosError} from 'axios';
+import { Base } from '.';
+import { AxiosError } from 'axios';
 import {
   HomePageApiResponse,
   MyfavoritePageApiResponse,
@@ -13,7 +13,7 @@ export async function homePageListApi(): Promise<
 > {
   try {
     const response = await api.get(
-      'https://api-nba.cquiz.app/v1/app/home-page.list',
+      'http://ygevo.myvnc.com/nba/api/v1/app/home-page.list',
     );
 
     return {
@@ -21,7 +21,7 @@ export async function homePageListApi(): Promise<
       data: response.data,
     };
   } catch (error) {
-    const axiosError = error as AxiosError<{message: string; errors: string}>;
+    const axiosError = error as AxiosError<{ message: string; errors: string }>;
     return {
       success: false,
       message: axiosError.response?.data?.message || 'Failed to fetch items',
@@ -34,7 +34,7 @@ export async function homePageListWNBAApi(): Promise<
 > {
   try {
     const response = await api.get(
-      'http://27.254.145.186:3006/v1/app/wnba-page.list',
+      'http://ygevo.myvnc.com/wnba/api/v1/app/wnba-page.list',
     );
 
     return {
@@ -42,7 +42,7 @@ export async function homePageListWNBAApi(): Promise<
       data: response.data,
     };
   } catch (error) {
-    const axiosError = error as AxiosError<{message: string; errors: string}>;
+    const axiosError = error as AxiosError<{ message: string; errors: string }>;
     return {
       success: false,
       message: axiosError.response?.data?.message || 'Failed to fetch items',
@@ -56,8 +56,8 @@ export async function favoritePageListApi(
   try {
     let endpoint =
       type === 0
-        ? 'https://api-nba.cquiz.app/v1/app'
-        : 'http://27.254.145.186:3006/v1/app';
+        ? 'http://ygevo.myvnc.com/nba/api/v1/app'
+        : 'http://ygevo.myvnc.com/wnba/api/v1/app';
 
     const response = await api.post(`${endpoint}/favorite-page.list`);
 
@@ -66,7 +66,7 @@ export async function favoritePageListApi(
       data: response.data,
     };
   } catch (error) {
-    const axiosError = error as AxiosError<{message: string; errors: string}>;
+    const axiosError = error as AxiosError<{ message: string; errors: string }>;
     return {
       success: false,
       message: axiosError.response?.data?.message || 'Failed to fetch items',
@@ -81,8 +81,8 @@ export async function historyListTeamApi({
   try {
     let endpoint =
       type === 0
-        ? 'https://api-nba.cquiz.app/v1/app'
-        : 'http://27.254.145.186:3006/v1/app';
+        ? 'http://ygevo.myvnc.com/nba/api/v1/app'
+        : 'http://ygevo.myvnc.com/wnba/api/v1/app';
 
     const response = await api.get(`${endpoint}/history.list?teamId=${teamId}`);
 
@@ -91,7 +91,7 @@ export async function historyListTeamApi({
       data: response.data,
     };
   } catch (error) {
-    const axiosError = error as AxiosError<{message: string; errors: string}>;
+    const axiosError = error as AxiosError<{ message: string; errors: string }>;
     return {
       success: false,
       message: axiosError.response?.data?.message || 'Failed to fetch items',
@@ -106,8 +106,8 @@ export async function totalTeamApi({
   try {
     let endpoint =
       type === 0
-        ? 'https://api-nba.cquiz.app/v1/app'
-        : 'http://27.254.145.186:3006/v1/app';
+        ? 'http://ygevo.myvnc.com/nba/api/v1/app'
+        : 'http://ygevo.myvnc.com/wnba/api/v1/app';
 
     const response = await api.get(`${endpoint}/totals?teamId=${teamId}`);
     return {
@@ -115,7 +115,7 @@ export async function totalTeamApi({
       data: response.data,
     };
   } catch (error) {
-    const axiosError = error as AxiosError<{message: string; errors: string}>;
+    const axiosError = error as AxiosError<{ message: string; errors: string }>;
     return {
       success: false,
       message: axiosError.response?.data?.message || 'Failed to fetch items',
@@ -129,8 +129,8 @@ export async function totalhistoryApi(
   try {
     let endpoint =
       type === 0
-        ? 'https://api-nba.cquiz.app/v1/app'
-        : 'http://27.254.145.186:3006/v1/app';
+        ? 'http://ygevo.myvnc.com/nba/api/v1/app'
+        : 'http://ygevo.myvnc.com/wnba/api/v1/app';
 
     const response = await api.get(`${endpoint}/totals`);
     return {
@@ -138,7 +138,7 @@ export async function totalhistoryApi(
       data: response.data,
     };
   } catch (error) {
-    const axiosError = error as AxiosError<{message: string; errors: string}>;
+    const axiosError = error as AxiosError<{ message: string; errors: string }>;
     return {
       success: false,
       message: axiosError.response?.data?.message || 'Failed to fetch items',
