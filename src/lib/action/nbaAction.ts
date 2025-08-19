@@ -13,7 +13,7 @@ export async function homePageListApi(): Promise<
 > {
   try {
     const response = await api.get(
-      'http://ygevo.myvnc.com/nba/api/v1/app/home-page.list',
+      'https://ygevo.myvnc.com/nba/api/v1/app/home-page.list',
     );
 
     return {
@@ -34,7 +34,7 @@ export async function homePageListWNBAApi(): Promise<
 > {
   try {
     const response = await api.get(
-      'http://ygevo.myvnc.com/wnba/api/v1/app/wnba-page.list',
+      'https://ygevo.myvnc.com/wnba/api/v1/app/wnba-page.list',
     );
 
     return {
@@ -56,8 +56,8 @@ export async function favoritePageListApi(
   try {
     let endpoint =
       type === 0
-        ? 'http://ygevo.myvnc.com/nba/api/v1/app'
-        : 'http://ygevo.myvnc.com/wnba/api/v1/app';
+        ? 'https://ygevo.myvnc.com/nba/api/v1/app'
+        : 'https://ygevo.myvnc.com/wnba/api/v1/app';
 
     const response = await api.post(`${endpoint}/favorite-page.list`);
 
@@ -81,8 +81,8 @@ export async function historyListTeamApi({
   try {
     let endpoint =
       type === 0
-        ? 'http://ygevo.myvnc.com/nba/api/v1/app'
-        : 'http://ygevo.myvnc.com/wnba/api/v1/app';
+        ? 'https://ygevo.myvnc.com/nba/api/v1/app'
+        : 'https://ygevo.myvnc.com/wnba/api/v1/app';
 
     const response = await api.get(`${endpoint}/history.list?teamId=${teamId}`);
 
@@ -106,8 +106,8 @@ export async function totalTeamApi({
   try {
     let endpoint =
       type === 0
-        ? 'http://ygevo.myvnc.com/nba/api/v1/app'
-        : 'http://ygevo.myvnc.com/wnba/api/v1/app';
+        ? 'https://ygevo.myvnc.com/nba/api/v1/app'
+        : 'https://ygevo.myvnc.com/wnba/api/v1/app';
 
     const response = await api.get(`${endpoint}/totals?teamId=${teamId}`);
     return {
@@ -129,8 +129,8 @@ export async function totalhistoryApi(
   try {
     let endpoint =
       type === 0
-        ? 'http://ygevo.myvnc.com/nba/api/v1/app'
-        : 'http://ygevo.myvnc.com/wnba/api/v1/app';
+        ? 'https://ygevo.myvnc.com/nba/api/v1/app'
+        : 'https://ygevo.myvnc.com/wnba/api/v1/app';
 
     const response = await api.get(`${endpoint}/totals`);
     return {
